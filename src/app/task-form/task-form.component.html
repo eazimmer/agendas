@@ -1,0 +1,21 @@
+<div id="content">
+  <form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
+    <div>
+      <label for="title">Title</label>
+      <input name="title" type="text" id="title" required ngModel>
+    </div>
+    <div>
+      <label for="dueDate">Due Date</label>
+      <input name="dueDate" type="text" id="dueDate" required ngModel>
+    </div>
+    <div>
+      <label for="severity">Severity</label>
+      <input name="severity" type="text" id="severity" required ngModel>
+    </div>
+    <div>
+      <label for="Description">Description</label>
+      <input name="description" type="text" id="Description" required ngModel>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
