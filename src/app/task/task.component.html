@@ -1,9 +1,11 @@
-<div id="content">
-  <p>ID: {{task.id}} <br>
-    Title: {{task.title}}<br>
-    Due Date: {{task.dueDate.toDateString()}}<br>
-    Severity: {{task.severity}}<br>
-    Description: {{task.description}}<br>
-  </p>
+<div class="task">
+  <div class="task-title">
+    <p>{{task.title}}</p>
+  </div>
+  <div class="task-details">
+    <p>{{task.dueDate.toDateString()}}</p>
+  </div>
+  <div class="task-details">
+    <p>{{task.severity}}</p>
+  </div>
 </div>
-

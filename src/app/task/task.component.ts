@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Task } from '../task';
 
 @Component({
@@ -8,12 +8,14 @@ import {Task } from '../task';
 })
 export class TaskComponent implements OnInit {
 
+  // Resolve no-input-rename TypeScript warning
   task: Task;
+  @Input('task') receivedTask;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.task = new Task(1, 'Sample Title', new Date(2021, 4, 2), 'Low Priority', 'This is a sample task description!');
+    this.task = this.receivedTask;
   }
 
 }

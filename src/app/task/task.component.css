@@ -1,5 +1,19 @@
-#content {
-  width: 600px;
-  height: 700px;
+.task {
+  padding-bottom: 5px;
+}
+
+.task-title {
+  width: 400px;
+  height: 50px;
+  border: 1px solid black;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.task-details {
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  display: inline-block;
   border: 1px solid black;
 }
