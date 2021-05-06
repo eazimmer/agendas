@@ -10,6 +10,10 @@ import { Task } from '../task';
 export class TaskListComponent implements OnInit {
   tasks: Task[];
 
+  addTask(value: Task): void {
+    this.tasks.push(new Task(3, value.title, new Date(value.dueDate), value.severity, value.description));
+  }
+
   constructor() {
     this.tasks = [];
     this.tasks.push(new Task(1, 'Sample Title 1', new Date(2021, 4, 2), 'Low Priority', 'This is a sample task description!'));

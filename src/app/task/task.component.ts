@@ -8,13 +8,11 @@ import {Task } from '../task';
 })
 export class TaskComponent implements OnInit {
 
-  @Input() receivedTask;
-  task: Task;
+  @Input() task;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.task = this.receivedTask;
   }
 
 }
