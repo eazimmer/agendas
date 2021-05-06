@@ -8,9 +8,8 @@ import {Task } from '../task';
 })
 export class TaskComponent implements OnInit {
 
-  // Resolve no-input-rename TypeScript warning
+  @Input() receivedTask;
   task: Task;
-  @Input('task') receivedTask;
 
   constructor() { }
 
