@@ -1,5 +1,7 @@
 <div id="tasks">
-  <app-task *ngFor="let task of tasks" [task]="task"
-  ></app-task>
-  <app-task-form (newTaskEvent)="addTask($event)"></app-task-form>
+  <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+  <div>
+    <app-task-form class="form-controls" (newTaskEvent)="addTask($event)"></app-task-form>
+    <app-task-buttons id="form-btns" class="form-controls"></app-task-buttons>
+  </div>
 </div>

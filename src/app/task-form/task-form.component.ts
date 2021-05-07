@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from '../task';
 import { NgForm } from '@angular/forms';
+import { ToggleTaskFormService } from '../toggle-task-form.service';
 
 @Component({
   selector: 'app-task-form',
@@ -8,6 +9,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
+
+  visible = false;
   @Output() newTaskEvent = new EventEmitter<Task>();
 
   onSubmit(taskForm: NgForm): void {
@@ -19,9 +22,15 @@ export class TaskFormComponent implements OnInit {
     this.newTaskEvent.emit(value);
   }
 
-  constructor() { }
+  // Toggles display of the form to add a new Task
+  isVisible(update: boolean): void {
+    this.visible = update;
+  }
+
+  constructor(private service: ToggleTaskFormService) { }
 
   ngOnInit(): void {
+    this.service.toggle.subscribe( update => this.isVisible(update) );
   }
 
 }

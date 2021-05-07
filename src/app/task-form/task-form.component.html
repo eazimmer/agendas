@@ -1,4 +1,4 @@
-<div id="form-content">
+<div *ngIf="visible" id="form-content">
   <form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
     <div>
       <label for="title">Title</label><br>
