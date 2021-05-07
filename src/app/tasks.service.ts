@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Task} from './task';
-import * as data from '../assets/tasks.json';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -9,7 +8,6 @@ import { Subject } from 'rxjs';
 export class TasksService {
   tasks: Task[];
   tasks$ = new Subject<Task[]>();
-  data: any = (data as any).default;
 
   // TO-DO: Integrate database for persistent data storage
   addTask(task: Task): void {
@@ -41,12 +39,19 @@ export class TasksService {
 
   constructor() {
     this.tasks = [];
-    this.data.map(task => this.tasks.push(new Task(
-      task.id,
-      task.title,
-      new Date(task.dueDate),
-      task.severity,
-      task.description
-    )));
+    this.addTask(new Task(
+      1,
+      'Sample Task 1',
+      new Date('04-3-2021'),
+      'Low Priority',
+      'I\'m the first task!'
+    ));
+    this.addTask(new Task(
+      2,
+      'Sample Task 2',
+      new Date('04-4-2021'),
+      'Medium Priority',
+      'I\'m the second task!'
+    ));
   }
 }

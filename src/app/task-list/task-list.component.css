@@ -2,6 +2,8 @@
   padding: 10px;
   width: fit-content;
   height: fit-content;
+  min-height: 100px;
+  min-width: 780px;
   border: 1px solid black;
 }
 
