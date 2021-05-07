@@ -9,7 +9,7 @@ import { ToggleTaskFormService } from '../toggle-task-form.service';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
-
+  uniqueIDCounter = 3;
   visible = false;
   @Output() newTaskEvent = new EventEmitter<Task>();
 
@@ -18,8 +18,11 @@ export class TaskFormComponent implements OnInit {
   }
 
   // Emits new Task to Task-List
-  addNewTask(value: Task): void {
-    this.newTaskEvent.emit(value);
+  addNewTask(task: Task): void {
+    task.id = this.uniqueIDCounter;
+    this.uniqueIDCounter++;
+    this.newTaskEvent.emit(task);
+    this.service.toggle.emit(!this.visible);
   }
 
   // Toggles display of the form to add a new Task

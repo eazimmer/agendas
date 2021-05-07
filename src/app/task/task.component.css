@@ -17,3 +17,17 @@
   display: inline-block;
   border: 1px solid black;
 }
+
+#task-controls {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.task-actions {
+  text-align: center;
+  border: 1px solid black;
+  width: 60px;
+  padding: 10px;
+  display: block;
+  height: 26px;
+}

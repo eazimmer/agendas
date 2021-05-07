@@ -10,16 +10,7 @@ export class TaskButtonsComponent implements OnInit {
   visible = false;
 
   addTask(): void {
-    console.log('Adding a Task');
     this.service.toggle.emit(!this.visible);
-  }
-
-  deleteTask(): void {
-    console.log('Deleting a Task');
-  }
-
-  editTask(): void {
-    console.log('Editing a Task');
   }
 
   sortTasks(): void {

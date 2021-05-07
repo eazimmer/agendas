@@ -30,6 +30,15 @@ export class TasksService {
     return this.tasks;
   }
 
+  editTask(id: number): void {
+    // TO-DO: Implement
+  }
+
+  deleteTask(id: number): void {
+    this.tasks.splice(this.tasks.indexOf(this.tasks.find(task => task.id === id)), 1);
+    this.tasks$.next(this.tasks);
+  }
+
   constructor() {
     this.tasks = [];
     this.data.map(task => this.tasks.push(new Task(
