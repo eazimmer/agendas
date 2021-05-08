@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from '../task';
 import { NgForm } from '@angular/forms';
-import { ToggleTaskFormService } from '../toggle-task-form.service';
+import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-task-form',
@@ -9,31 +9,29 @@ import { ToggleTaskFormService } from '../toggle-task-form.service';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
-  uniqueIDCounter = 3;
-  visible = false;
   @Output() newTaskEvent = new EventEmitter<Task>();
+  uniqueIDCounter = 3; // ID of first new non-hardcoded task
+  visible = false;
 
   onSubmit(taskForm: NgForm): void {
     this.addNewTask(taskForm.value);
   }
 
-  // Emits new Task to Task-List
   addNewTask(task: Task): void {
     task.id = this.uniqueIDCounter;
     this.uniqueIDCounter++;
     this.newTaskEvent.emit(task);
-    this.service.toggle.emit(!this.visible);
+    this.tasksService.toggleAddForm.emit(!this.visible);
   }
 
-  // Toggles display of the form to add a new Task
   isVisible(update: boolean): void {
     this.visible = update;
   }
 
-  constructor(private service: ToggleTaskFormService) { }
+  constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
-    this.service.toggle.subscribe( update => this.isVisible(update) );
+    this.tasksService.toggleAddForm.subscribe(update => this.isVisible(update) );
   }
 
 }

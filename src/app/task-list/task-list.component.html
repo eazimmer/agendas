@@ -3,5 +3,6 @@
   <div>
     <app-task-form class="form-controls" (newTaskEvent)="addTask($event)"></app-task-form>
     <app-task-buttons class="form-controls"></app-task-buttons>
+    <app-task-edit-form class="form-controls" (changedTaskEvent)="editTask($event)"></app-task-edit-form>
   </div>
 </div>

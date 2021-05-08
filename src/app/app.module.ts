@@ -7,6 +7,7 @@ import { TaskComponent } from './task/task.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskButtonsComponent } from './task-buttons/task-buttons.component';
+import { TaskEditFormComponent } from './task-edit-form/task-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TaskButtonsComponent } from './task-buttons/task-buttons.component';
     TaskFormComponent,
     TaskListComponent,
     TaskButtonsComponent,
+    TaskEditFormComponent,
   ],
   imports: [
     BrowserModule,

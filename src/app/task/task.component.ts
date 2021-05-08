@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TasksService } from '../tasks.service';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-task',
@@ -8,16 +9,18 @@ import { TasksService } from '../tasks.service';
 })
 export class TaskComponent implements OnInit {
   @Input() task;
+  visible = false;
 
-  editTask(id: number): void {
-    this.service.editTask(id);
+  editTask(task: Task): void {
+    this.tasksService.toggleEditForm.emit(!this.visible);
+    this.tasksService.taskToEdit.emit(task);
   }
 
   deleteTask(id: number): void {
-    this.service.deleteTask(id);
+    this.tasksService.deleteTask(id);
   }
 
-  constructor(private service: TasksService) { }
+  constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
   }

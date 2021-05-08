@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToggleTaskFormService } from '../toggle-task-form.service';
+import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-task-buttons',
@@ -10,17 +10,18 @@ export class TaskButtonsComponent implements OnInit {
   visible = false;
 
   addTask(): void {
-    this.service.toggle.emit(!this.visible);
+    this.tasksService.toggleAddForm.emit(!this.visible);
   }
 
+  // TO-DO: Implement
   sortTasks(): void {
     console.log('Sorting Tasks');
   }
 
-  constructor(private service: ToggleTaskFormService) { }
+  constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
-    this.service.toggle.subscribe(status => this.visible = status);
+    this.tasksService.toggleAddForm.subscribe(status => this.visible = status);
   }
 
 }

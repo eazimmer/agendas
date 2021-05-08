@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Task} from './task';
 import { Subject } from 'rxjs';
 
@@ -6,6 +6,9 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class TasksService {
+  @Output() toggleAddForm = new EventEmitter<boolean>();
+  @Output() toggleEditForm = new EventEmitter<boolean>();
+  @Output() taskToEdit = new EventEmitter<Task>();
   tasks: Task[];
   tasks$ = new Subject<Task[]>();
 
@@ -28,12 +31,12 @@ export class TasksService {
     return this.tasks;
   }
 
-  editTask(id: number): void {
-    // TO-DO: Implement
+  editTask(task: Task): void {
+    this.tasks[this.tasks.findIndex(item => item.id === task.id)] = task;
   }
 
   deleteTask(id: number): void {
-    this.tasks.splice(this.tasks.indexOf(this.tasks.find(task => task.id === id)), 1);
+    this.tasks.splice(this.tasks.findIndex(task => task.id === id), 1);
     this.tasks$.next(this.tasks);
   }
 
