@@ -4,7 +4,7 @@ export class Task {
     public id: number,
     public title: string,
     public dueDate: Date,
-    public severity: string,
+    public priority: string,
     public description: string
   ) {}
 }

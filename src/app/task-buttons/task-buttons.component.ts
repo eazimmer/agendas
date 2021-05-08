@@ -13,9 +13,13 @@ export class TaskButtonsComponent implements OnInit {
     this.tasksService.toggleAddForm.emit(!this.visible);
   }
 
+  sortByDate(): void {
+    this.tasksService.sortByDate();
+  }
+
   // TO-DO: Implement
-  sortTasks(): void {
-    console.log('Sorting Tasks');
+  sortByPriority(): void {
+    this.tasksService.sortByPriority();
   }
 
   constructor(private tasksService: TasksService) { }

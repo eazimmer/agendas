@@ -1,3 +1,19 @@
+.headers {
+  display: inline-block;
+}
+
+#task-header {
+  padding-left: 10px;
+}
+
+#date-header {
+  padding-left: 400px;
+}
+
+#priority-header {
+  padding-left: 80px;
+}
+
 #tasks {
   padding: 10px;
   width: fit-content;

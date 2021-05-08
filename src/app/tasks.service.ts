@@ -19,7 +19,7 @@ export class TasksService {
       task.id,
       task.title,
       new Date(task.dueDate),
-      task.severity,
+      task.priority,
       task.description
     ));
 
@@ -40,20 +40,44 @@ export class TasksService {
     this.tasks$.next(this.tasks);
   }
 
+  sortByDate(): void {
+    // @ts-ignore
+    this.tasks.sort((a, b) => a.dueDate - b.dueDate);
+    this.tasks$.next(this.tasks);
+  }
+
+  sortByPriority(): void {
+    const sortingOrder = {
+      High: 1,
+      Medium: 2,
+      Low : 3,
+    };
+
+    this.tasks.sort((a, b) => {
+        if (sortingOrder[a.priority] < sortingOrder[b.priority]) {
+          return -1;
+        } else if (sortingOrder[a.priority] > sortingOrder[b.priority]) {
+          return 1;
+        }
+      });
+    this.tasks$.next(this.tasks);
+
+  }
+
   constructor() {
     this.tasks = [];
     this.addTask(new Task(
       1,
       'Sample Task 1',
       new Date('04-3-2021'),
-      'Low Priority',
+      'Low',
       'I\'m the first task!'
     ));
     this.addTask(new Task(
       2,
       'Sample Task 2',
       new Date('04-4-2021'),
-      'Medium Priority',
+      'Medium',
       'I\'m the second task!'
     ));
   }

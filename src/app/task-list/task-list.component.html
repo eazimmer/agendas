@@ -1,4 +1,9 @@
 <div id="tasks">
+  <div>
+    <h3 id="task-header" class="headers">Task</h3>
+    <h3 id="date-header" class="headers">Due Date</h3>
+    <h3 id="priority-header" class="headers">Priority</h3>
+  </div>
   <app-task *ngFor="let task of tasks" [task]="task"></app-task>
   <div>
     <app-task-form class="form-controls" (newTaskEvent)="addTask($event)"></app-task-form>
