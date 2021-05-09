@@ -1,15 +1,15 @@
 <div class="task">
   <div class="task-title">
-    <p>{{task.title}}</p>
+    <p id="task-title">{{task.title}}</p>
   </div>
   <div class="task-details">
-    <p>{{task.dueDate.toDateString()}}</p>
+    <p id="task-dueDate">{{task.dueDate.toDateString()}}</p>
   </div>
   <div class="task-details">
-    <p>{{task.priority}}</p>
+    <p id="task-priority">{{task.priority}}</p>
   </div>
   <div id="task-controls">
-    <button class="task-actions" (click)="editTask(task)">Edit</button>
-    <button class="task-actions" (click)="deleteTask(task.id)">Delete</button>
+    <button id="edit-btn" class="task-actions" (click)="editTask(task)">Edit</button>
+    <button id="del-btn" class="task-actions" (click)="deleteTask(task.id)">Delete</button>
   </div>
 </div>
