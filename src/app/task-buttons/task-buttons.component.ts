@@ -17,7 +17,6 @@ export class TaskButtonsComponent implements OnInit {
     this.tasksService.sortByDate();
   }
 
-  // TO-DO: Implement
   sortByPriority(): void {
     this.tasksService.sortByPriority();
   }
