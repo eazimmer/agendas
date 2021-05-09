@@ -4,3 +4,17 @@
   height: fit-content;
   border: 1px solid black;
 }
+
+.btn {
+  vertical-align: top;
+  display: inline-block;
+}
+
+#sort-by-date-btn {
+  margin-left: 345px;
+}
+
+#sort-by-priority {
+  margin-left: 40px;
+  margin-right: 75px;
+}

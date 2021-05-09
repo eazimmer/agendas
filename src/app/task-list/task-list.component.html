@@ -5,9 +5,9 @@
     <h3 id="priority-header" class="headers">Priority</h3>
   </div>
   <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+  <app-task-buttons class="form-controls"></app-task-buttons>
   <div>
     <app-task-form class="form-controls" (newTaskEvent)="addTask($event)"></app-task-form>
-    <app-task-buttons class="form-controls"></app-task-buttons>
     <app-task-edit-form class="form-controls" (changedTaskEvent)="editTask($event)"></app-task-edit-form>
   </div>
 </div>
