@@ -19,6 +19,7 @@ export class TaskEditFormComponent implements OnInit {
 
   editTask(task: Task): void {
     task.id = this.placeholderTask.id;
+    task.dueDate = new Date(task.dueDate);
     this.changedTaskEvent.emit(task);
     this.tasksService.toggleEditForm.emit(!this.visible);
   }
