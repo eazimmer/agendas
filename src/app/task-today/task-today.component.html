@@ -1,0 +1,6 @@
+<div *ngIf="this.tasks.length != 0" id="tasks">
+  <h3>Tasks Due Today</h3>
+  <ul>
+    <li class="task" *ngFor="let task of tasks">{{task.title}}</li>
+  </ul>
+</div>
