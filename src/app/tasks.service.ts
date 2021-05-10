@@ -54,14 +54,13 @@ export class TasksService {
     };
 
     this.tasks.sort((a, b) => {
-        if (sortingOrder[a.priority] < sortingOrder[b.priority]) {
-          return -1;
-        } else if (sortingOrder[a.priority] > sortingOrder[b.priority]) {
-          return 1;
-        }
-      });
+      if (sortingOrder[a.priority] < sortingOrder[b.priority]) {
+        return -1;
+      } else if (sortingOrder[a.priority] > sortingOrder[b.priority]) {
+        return 1;
+      }
+    });
     this.tasks$.next(this.tasks);
-
   }
 
   constructor() {
