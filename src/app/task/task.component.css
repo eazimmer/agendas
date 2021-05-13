@@ -1,5 +1,9 @@
 .task {
-  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.task:hover {
+  border: 3px solid black;
 }
 
 .task-title {
