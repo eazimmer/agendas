@@ -18,6 +18,10 @@
   border: 1px solid black;
 }
 
+#task-content {
+  display: inline-block;
+}
+
 #task-controls {
   vertical-align: top;
   display: inline-block;

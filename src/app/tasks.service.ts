@@ -9,6 +9,7 @@ export class TasksService {
   @Output() toggleAddForm = new EventEmitter<boolean>();
   @Output() toggleEditForm = new EventEmitter<boolean>();
   @Output() taskToEdit = new EventEmitter<Task>();
+  @Output() displayTaskDetails = new EventEmitter<Task>();
   tasks: Task[];
   tasks$ = new Subject<Task[]>();
 

@@ -1,12 +1,14 @@
 <div class="task">
-  <div class="task-title">
-    <p id="task-title">{{task.title}}</p>
-  </div>
-  <div class="task-details">
-    <p id="task-dueDate">{{task.dueDate.toDateString()}}</p>
-  </div>
-  <div class="task-details">
-    <p id="task-priority">{{task.priority}}</p>
+  <div id="task-content" (click)="selectTaskForDisplay()">
+    <div class="task-title">
+      <p id="task-title">{{task.title}}</p>
+    </div>
+    <div class="task-details">
+      <p id="task-dueDate">{{task.dueDate.toDateString()}}</p>
+    </div>
+    <div class="task-details">
+      <p id="task-priority">{{task.priority}}</p>
+    </div>
   </div>
   <div id="task-controls">
     <button id="edit-btn" class="task-actions" (click)="editTask(task)">Edit</button>

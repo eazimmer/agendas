@@ -1,0 +1,19 @@
+.task {
+  padding: 5px;
+  border: 1px solid black;
+  width: fit-content;
+}
+
+.task-details {
+  padding: 5px;
+  width: 790px;
+  height: fit-content;
+  border: 1px solid black;
+}
+
+#close-btn {
+  margin: 3px;
+  height: 35px;
+  width: 35px;
+  float: right;
+}

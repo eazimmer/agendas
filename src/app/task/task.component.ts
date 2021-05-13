@@ -20,6 +20,10 @@ export class TaskComponent implements OnInit {
     this.tasksService.deleteTask(id);
   }
 
+  selectTaskForDisplay(): void {
+    this.tasksService.displayTaskDetails.emit(this.task);
+  }
+
   constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
