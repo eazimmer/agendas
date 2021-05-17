@@ -12,6 +12,7 @@ export class TaskFormComponent implements OnInit {
   @Output() newTaskEvent = new EventEmitter<Task>();
   uniqueIDCounter = 3; // ID of first new non-hardcoded task
   visible = false;
+  modal = 'none';
 
   onSubmit(taskForm: NgForm): void {
     this.addNewTask(taskForm.value);
@@ -26,12 +27,13 @@ export class TaskFormComponent implements OnInit {
 
   isVisible(update: boolean): void {
     this.visible = update;
+    this.modal = (this.modal === 'none') ? 'block' : 'none';
   }
 
   constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
-    this.tasksService.toggleAddForm.subscribe(update => this.isVisible(update) );
+    this.tasksService.toggleAddForm.subscribe(update => this.isVisible(update));
   }
 
 }

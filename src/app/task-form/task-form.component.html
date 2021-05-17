@@ -1,31 +1,33 @@
-<div *ngIf="visible" id="form-content">
-  <h3>Adding Task</h3>
-  <form ngNativeValidate #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
-    <div>
-      <label for="title">Title</label><br>
-      <input name="title" type="text" id="title" placeholder="Title" required ngModel>
-    </div>
-    <br>
-    <div>
-      <label for="dueDate">Due Date</label><br>
-      <input name="dueDate" type="text" id="dueDate" placeholder="MM-DD-YY"required ngModel>
-    </div>
-    <br>
-    <div>
-      <label for="priority">Priority</label><br>
-      <select id="priority" name="priority" required ngModel>
-        <option value="" disabled selected hidden>Select:</option>
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>
-      </select>
-    </div>
-    <br>
-    <div>
-      <label for="Description">Description</label><br>
-      <input name="description" type="text" id="Description" placeholder="Description" required ngModel>
-    </div>
-    <br>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
+<div *ngIf="visible" [style.display]="modal" id="modal">
+  <div id="modal-content">
+    <h3>Adding Task</h3>
+    <form ngNativeValidate #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
+      <div>
+        <label for="title">Title</label><br>
+        <input name="title" type="text" id="title" placeholder="Title" required ngModel>
+      </div>
+      <br>
+      <div>
+        <label for="dueDate">Due Date</label><br>
+        <input name="dueDate" type="text" id="dueDate" placeholder="MM-DD-YY" required ngModel>
+      </div>
+      <br>
+      <div>
+        <label for="priority">Priority</label><br>
+        <select id="priority" name="priority" required ngModel>
+          <option value="" disabled selected hidden>Select:</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <label for="Description">Description</label><br>
+        <input name="description" type="text" id="Description" placeholder="Description" required ngModel>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
 </div>
