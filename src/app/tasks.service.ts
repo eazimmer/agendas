@@ -34,6 +34,7 @@ export class TasksService {
 
   editTask(task: Task): void {
     this.tasks[this.tasks.findIndex(item => item.id === task.id)] = task;
+    this.tasks$.next(this.tasks);
   }
 
   deleteTask(id: number): void {
