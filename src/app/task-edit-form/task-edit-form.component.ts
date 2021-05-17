@@ -12,6 +12,7 @@ export class TaskEditFormComponent implements OnInit {
   @Output() changedTaskEvent = new EventEmitter<Task>();
   visible = false;
   placeholderTask: Task;
+  modal = 'none';
 
   onSubmit(taskForm: NgForm): void {
     this.editTask(taskForm.value);
@@ -26,6 +27,7 @@ export class TaskEditFormComponent implements OnInit {
 
   isVisible(update: boolean): void {
     this.visible = update;
+    this.modal = (this.modal === 'none') ? 'block' : 'none';
   }
 
   constructor(private tasksService: TasksService) { }
