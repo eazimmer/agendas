@@ -1,19 +1,21 @@
-<div *ngIf="visible" class="task">
-  <button id='close-btn' type="button" class="btn-close" (click)="closeWindow()">X</button>
-  <div class="task-details">
-    <strong>Title</strong>
-    <p id="task-title">{{task.title}}</p>
-  </div>
-  <div class="task-details">
-    <strong>Due Date</strong>
-    <p id="task-dueDate">{{task.dueDate.toDateString()}}</p>
-  </div>
-  <div class="task-details">
-    <strong>Priority</strong>
-    <p id="task-priority">{{task.priority}}</p>
-  </div>
-  <div class="task-details">
-    <strong>Description</strong>
-    <p id="task-description">{{task.description}}</p>
+<div *ngIf="visible" id="modal" [style.display]="modal">
+  <div id="modal-content">
+    <button id='close-btn' type="button" class="btn-close" (click)="closeWindow()">X</button>
+    <div class="task-details">
+      <strong>Title</strong>
+      <p id="task-title">{{task.title}}</p>
+    </div>
+    <div class="task-details">
+      <strong>Due Date</strong>
+      <p id="task-dueDate">{{task.dueDate.toDateString()}}</p>
+    </div>
+    <div class="task-details">
+      <strong>Priority</strong>
+      <p id="task-priority">{{task.priority}}</p>
+    </div>
+    <div class="task-details">
+      <strong>Description</strong>
+      <p id="task-description">{{task.description}}</p>
+    </div>
   </div>
 </div>

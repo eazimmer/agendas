@@ -10,14 +10,17 @@ import { TasksService } from '../tasks.service';
 export class TaskDetailsComponent implements OnInit {
   @Input() task;
   visible = false;
+  modal = 'none';
 
   closeWindow(): void {
     this.visible = false;
+    this.modal = 'none';
   }
 
   revealWindow(task: Task): void {
     this.task = task;
     this.visible = true;
+    this.modal = 'block';
   }
 
   constructor(private tasksService: TasksService) { }
