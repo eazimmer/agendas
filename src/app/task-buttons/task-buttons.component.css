@@ -5,16 +5,20 @@
   border: 1px solid black;
 }
 
-.btn {
+.task-btn {
   vertical-align: top;
   display: inline-block;
 }
 
+.task-btn:hover {
+  background-color: #888888;
+}
+
 #sort-by-date-btn {
-  margin-left: 345px;
+  margin-left: 315px;
 }
 
 #sort-by-priority {
-  margin-left: 40px;
-  margin-right: 75px;
+  margin-left: 20px;
+  margin-right: 66px;
 }

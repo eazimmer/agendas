@@ -1,9 +1,6 @@
 .task {
   margin-bottom: 5px;
-}
-
-.task:hover {
-  border: 3px solid black;
+  line-height: 50px;
 }
 
 .task-title {
@@ -26,16 +23,25 @@
   display: inline-block;
 }
 
+#task-content:hover {
+  background-color: #888888;
+}
+
 #task-controls {
   vertical-align: top;
   display: inline-block;
 }
 
 .task-actions {
-  text-align: center;
   border: 1px solid black;
   width: 60px;
   padding: 10px;
   display: block;
-  height: 26px;
+  height: 25px;
+  font-size: 12px;
+  line-height: 8px;
+}
+
+.task-actions:hover {
+  background-color: #888888;
 }
